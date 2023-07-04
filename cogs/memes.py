@@ -575,9 +575,11 @@ class Memes(commands.Cog):
         """Displays how much Blahajs you can buy with that money. ($ or €)"""
         # blahaj. takes usd or eur
         blahaj_link = "https://nintendohomebrew.com/assets/img/blahaj.png"
-        if money < 18:
+        # 7/4/2023 adding variable for the price so you can update it by typing it once instead of twice very useful
+        blahaj_price = 30
+        if money < blahaj_price:
             text = "You can't even buy a Blahaj! Get more money, then buy a Blahaj."
-        elif money // 18 == 1:
+        elif money // blahaj_price == 1:
             text = "You could buy one Blahaj with that. Think about it."
         else:
             try:
